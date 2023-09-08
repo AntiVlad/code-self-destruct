@@ -6,7 +6,7 @@ PORT = 8080
 
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):    
-        self.send_response(200)
+        self.send_response(401)
         self.end_headers()
         
 with socketserver.TCPServer(("", PORT), RequestHandler) as httpd:
